@@ -1,3 +1,3 @@
 # UD Japanese UD変換ルール
 
-[https://github.com/udjapanese/UD_converion_table/](https://github.com/udjapanese/UD_converion_table/ )
+[https://udjapanese.github.io/UD_converion_table/index.html](https://udjapanese.github.io/UD_converion_table/index.html )
