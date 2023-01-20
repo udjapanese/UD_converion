@@ -116,7 +116,7 @@ def _main():
     parser.add_argument("dep_yaml_file")
     parser.add_argument("-t", "--tmpl-file", default="tmpl/_tmpl.html")
     parser.add_argument("-p", "--save-pos-file", default="POS.html")
-    parser.add_argument("-d", "--save-dep-file", default="DEP.html")
+    parser.add_argument("-d", "--save-dep-file", default="DEPREL.html")
     args = parser.parse_args()
 
     pos_template = Template(open(args.tmpl_file, "r").read())
