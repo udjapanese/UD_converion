@@ -47,7 +47,7 @@ tstr = {
     # 対象語が(格|係|副)助詞かどうか  case (include_child_caseなどでの想定)
     "case": "に 付属する助詞",
     # 対象語の文節タイプ  "体言|用言|コピュラ"   bunsetutype
-    "busetutype": "の 文節タイプ",
+    "busetutype": "の 文法種類",
     # 指定した距離を表す式X-Y(==|>|<|>=|<=)に合致している
     "disformula": "との 距離",
     # 述語項
@@ -63,7 +63,20 @@ POS_RULE = {
     "parent_upos": "単語の親のUPOS"
 }
 POS_COL = ["短単位品詞", "原型", "長単位品詞", "単語の親のUPOS", "単語の親のUPOS"]
-
+DESEC = """
+            <ul>
+                <li>対象の単語について条件を満たすものを割り当てる</li>
+                <li>上位のものを優先的に割り当てる</li>
+                <li>文節タイプ</li>
+                <ul>
+                    <li>係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの</li>
+                </ul>
+                <li>文法種類</li>
+                <ul>
+                    <li>文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している</li>
+                </ul>
+            </ul>
+ """
 
 def get_dep_rules_table(dep_yaml_file: str="conf/bccwj_dep_suw_rule.yaml") -> pandas.DataFrame:
     data: list[list[str]] = []
@@ -110,24 +123,12 @@ def _main():
     pos_df = get_pos_rules_table(args.pos_yaml_file)
     pdata = pos_df.to_html(justify="unset", classes="pure-table pure-table-bordered", index_names=True, escape=False, index=True)
     with open(args.save_pos_file, "w") as wrt:
-        desc = """
-            <ul>
-                <li>対象の単語について条件を満たすものを割り当てる</li>
-                <li>上位のものを優先的に割り当てる</li>
-            </ul>
-        """
-        wrt.write(pos_template.render(table=pdata, desc=desc, title="日本語UDにおけるPOS変換規則の一覧"))
+        wrt.write(pos_template.render(table=pdata, desc=DESEC, title="日本語UDにおけるPOS変換規則の一覧"))
     dep_template = Template(open(args.tmpl_file, "r").read())
     dep_df = get_dep_rules_table(args.dep_yaml_file)
     ddata = dep_df.to_html(justify="unset", classes="pure-table pure-table-bordered", index_names=True, escape=False, index=True)
     with open(args.save_dep_file, "w") as wrt:
-        desc = """
-            <ul>
-                <li>対象の単語について条件を満たすものを割り当てる</li>
-                <li>上位のものを優先的に割り当てる</li>
-            </ul>
-        """
-        wrt.write(dep_template.render(table=ddata, desc=desc, title="日本語UDにおけるDEPREL変換規則の一覧"))
+        wrt.write(dep_template.render(table=ddata, desc=DESEC, title="日本語UDにおけるDEPREL変換規則の一覧"))
 
 
 if __name__ == '__main__':
