@@ -21,11 +21,24 @@
         <h1>日本語UDにおけるDEPREL変換規則の一覧</h1>
 
         
-            <ul>
-                <li>対象の単語について条件を満たすものを割り当てる</li>
-                <li>上位のものを優先的に割り当てる</li>
-            </ul>
-        
+    <ul>
+        <li>対象の単語について条件を満たすものを割り当てる</li>
+        <li>上位のものを優先的に割り当てる</li>
+        <li>文節タイプ：係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの</li>
+        <ul>
+            <li>ROOT: ルート</li>
+            <li>SEM_HEAD: 内容語の主辞</li>
+            <li>CONT: 主辞ではない内容語</li>
+            <li>SYN_HEAD: 機能語の主辞</li>
+            <li>FUNC: SYN_HEAD以外の機能語</li>
+            <li>NO_HEAD: 上記以外</li>
+        </ul>
+        <li>文法種類</li>
+        <ul>
+            <li>文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している</li>
+        </ul>
+    </ul>
+ 
 
         <table border="1" class="dataframe pure-table pure-table-bordered">
   <thead>
@@ -273,12 +286,12 @@
     </tr>
     <tr>
       <th>48</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文節タイプ が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「は」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^名詞-普通名詞-副詞可能」 と一致する</li><li>対象の単語の親 の 文節タイプ が 「用言,コピュラ」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文法種類 が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「は」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^名詞-普通名詞-副詞可能」 と一致する</li><li>対象の単語の親 の 文法種類 が 「用言,コピュラ」 のいずれかだ</li></ul></td>
       <td>obl</td>
     </tr>
     <tr>
       <th>49</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文節タイプ が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「が:助詞-格助詞」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文法種類 が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「が:助詞-格助詞」 のいずれかだ</li></ul></td>
       <td>nsubj</td>
     </tr>
     <tr>
@@ -293,12 +306,12 @@
     </tr>
     <tr>
       <th>52</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の 文節タイプ が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「を」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の 文法種類 が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「を」 のいずれかだ</li></ul></td>
       <td>obj</td>
     </tr>
     <tr>
       <th>53</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文節タイプ が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「は:助詞-係助詞,も:助詞-係助詞」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 と一致する</li><li>対象の単語 の 文法種類 が 「体言」 と一致する</li><li>対象の単語の子である単語 に 付属する助詞 が 「は:助詞-係助詞,も:助詞-係助詞」 のいずれかだ</li></ul></td>
       <td>nsubj</td>
     </tr>
     <tr>
@@ -343,17 +356,17 @@
     </tr>
     <tr>
       <th>62</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li></ul></td>
       <td>advcl</td>
     </tr>
     <tr>
       <th>63</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の子である単語 の Unidic短単位品詞 が 「助動詞」 と一致する</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の子である単語 の Unidic短単位品詞 が 「助動詞」 と一致する</li></ul></td>
       <td>advcl</td>
     </tr>
     <tr>
       <th>64</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADV」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADV」 のいずれかだ</li></ul></td>
       <td>advmod</td>
     </tr>
     <tr>
@@ -388,7 +401,7 @@
     </tr>
     <tr>
       <th>71</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ,ADV」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「VERB,ADJ,ADV」 のいずれかだ</li></ul></td>
       <td>obl</td>
     </tr>
     <tr>
@@ -403,12 +416,12 @@
     </tr>
     <tr>
       <th>74</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADJ」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^連体詞」 と一致する</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADJ」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^連体詞」 と一致する</li></ul></td>
       <td>amod</td>
     </tr>
     <tr>
       <th>75</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「VERB,ADJ」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li></ul></td>
       <td>acl</td>
     </tr>
     <tr>
@@ -418,22 +431,22 @@
     </tr>
     <tr>
       <th>77</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADJ」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADJ」 のいずれかだ</li></ul></td>
       <td>acl</td>
     </tr>
     <tr>
       <th>78</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の子である単語 の Unidic短単位品詞 が 「助動詞」 と一致する</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM」 のいずれかだ</li><li>対象の単語の子である単語 の Unidic短単位品詞 が 「助動詞」 と一致する</li></ul></td>
       <td>acl</td>
     </tr>
     <tr>
       <th>79</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^形状詞-[助]+」 と一致する</li><li>対象の単語の親 の UD品詞 が 「NOUN」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^形状詞-[助]+」 と一致する</li><li>対象の単語の親 の UD品詞 が 「NOUN」 のいずれかだ</li></ul></td>
       <td>amod</td>
     </tr>
     <tr>
       <th>80</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^形状詞-[助]+」 と一致する</li><li>対象の単語の親 の UD品詞 が 「VERB」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「^形状詞-[助]+」 と一致する</li><li>対象の単語の親 の UD品詞 が 「VERB」 のいずれかだ</li></ul></td>
       <td>advcl</td>
     </tr>
     <tr>
@@ -473,12 +486,12 @@
     </tr>
     <tr>
       <th>88</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,CONT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「PART」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「.+形[状容]詞的」 と一致する</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,PART」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,CONT,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「PART」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「.+形[状容]詞的」 と一致する</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,PART」 のいずれかだ</li></ul></td>
       <td>amod</td>
     </tr>
     <tr>
       <th>89</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,CONT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「PART」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「.+名詞的」 と一致する</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,CONT,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「PART」 のいずれかだ</li><li>対象の単語 の Unidic短単位品詞 が 「.+名詞的」 と一致する</li></ul></td>
       <td>nmod</td>
     </tr>
     <tr>
@@ -528,7 +541,7 @@
     </tr>
     <tr>
       <th>99</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADP」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「ADP」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN」 のいずれかだ</li></ul></td>
       <td>nmod</td>
     </tr>
     <tr>
@@ -553,7 +566,7 @@
     </tr>
     <tr>
       <th>104</th>
-      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「SYM,X」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM,SYM」 のいずれかだ</li></ul></td>
+      <td><ul><li>対象の単語 の 文節タイプ が 「SEM_HEAD,ROOT」 のいずれかだ</li><li>対象の単語 の UD品詞 が 「SYM,X」 のいずれかだ</li><li>対象の単語の親 の UD品詞 が 「NOUN,PRON,PROPN,NUM,SYM」 のいずれかだ</li></ul></td>
       <td>nmod</td>
     </tr>
     <tr>

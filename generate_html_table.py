@@ -4,11 +4,11 @@
 SHOW rule table
 """
 
-import ruamel.yaml
-import pandas
 import argparse
 
-from jinja2 import Template
+import pandas
+import ruamel.yaml
+from jinja2 import Environment, FileSystemLoader
 
 fstr = {
     "include": "{} {} が 「{}」 のいずれかだ",
@@ -64,71 +64,88 @@ POS_RULE = {
 }
 POS_COL = ["短単位品詞", "原型", "長単位品詞", "単語の親のUPOS", "単語の親のUPOS"]
 DESEC = """
-            <ul>
-                <li>対象の単語について条件を満たすものを割り当てる</li>
-                <li>上位のものを優先的に割り当てる</li>
-                <li>文節タイプ</li>
-                <ul>
-                    <li>係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの</li>
-                </ul>
-                <li>文法種類</li>
-                <ul>
-                    <li>文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している</li>
-                </ul>
-            </ul>
+    <ul>
+        <li>対象の単語について条件を満たすものを割り当てる</li>
+        <li>上位のものを優先的に割り当てる</li>
+        <li>文節タイプ：係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの</li>
+        <ul>
+            <li>ROOT: ルート</li>
+            <li>SEM_HEAD: 内容語の主辞</li>
+            <li>CONT: 主辞ではない内容語</li>
+            <li>SYN_HEAD: 機能語の主辞</li>
+            <li>FUNC: SYN_HEAD以外の機能語</li>
+            <li>NO_HEAD: 上記以外</li>
+        </ul>
+        <li>文法種類</li>
+        <ul>
+            <li>文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している</li>
+        </ul>
+    </ul>
  """
 
 def get_dep_rules_table(dep_yaml_file: str="conf/bccwj_dep_suw_rule.yaml") -> pandas.DataFrame:
+    """ generate DEP rule table as Dataframe """
     data: list[list[str]] = []
     yaml = ruamel.yaml.YAML()
-    rule_set = yaml.load(open(dep_yaml_file, "r").read().replace('\t', '    '))
-    for rules in rule_set["order_rule"]:
-        rrr: list[str] = []
-        for rule in rules["rule"]:
-            func, iargs = rule
-            f, a, t = func.split("_")
-            fff = fstr[f]
-            rrr.append(fff.format(astr[a], tstr[t], iargs if not isinstance(iargs, list) else ",".join(iargs)))
-        data.append(["<ul>" + "".join(["<li>"+r+"</li>" for r in rrr]) + "</ul>", rules["res"]])
-    df = pandas.DataFrame(data, columns=["ルール", "付与DEPREL"])
-    df.index = df.index + 1
-    return df
+    with open(dep_yaml_file, "r", encoding="utf-8") as rdr:
+        for rules in yaml.load(rdr.read().replace('\t', '    '))["order_rule"]:
+            rrr: list[str] = []
+            for rule in rules["rule"]:
+                func, iargs = rule
+                fff_, aaa, ttt = func.split("_")
+                rrr.append(
+                    fstr[fff_].format(
+                        astr[aaa], tstr[ttt],
+                        iargs if not isinstance(iargs, list) else ",".join(iargs)
+                    )
+                )
+            data.append(["<ul>" + "".join(["<li>" + r + "</li>" for r in rrr]) + "</ul>", rules["res"]])
+    dfe = pandas.DataFrame(data, columns=["ルール", "付与DEPREL"])
+    dfe.index = dfe.index + 1
+    return dfe
 
 
 def get_pos_rules_table(pos_yaml_file: str="conf/bccwj_pos_suw_rule.yaml") -> pandas.DataFrame:
+    """ generate POS rule table as Dataframe """
     data: list[list[str]] = []
     yaml = ruamel.yaml.YAML()
-    rule_set = yaml.load(open(pos_yaml_file, "r").read().replace('\t', '    '))
-    for rule_pair in rule_set["rule"]:
-        rule, result = rule_pair
-        drule: dict[str, str] = {}
-        for name, value in list(rule.items()):
-            drule[POS_RULE[name]] = value
-        data.append([drule[c] if c in drule else "" for c in POS_COL] + [result[0]])
-    df = pandas.DataFrame(data, columns=POS_COL + ["付与UPOS"])
-    df.index = df.index + 1
-    return df
+    with open(pos_yaml_file, "r", encoding="utf-8") as rdr:
+        for rule_pair in yaml.load(rdr.read().replace('\t', '    '))["rule"]:
+            rule, result = rule_pair
+            drule: dict[str, str] = {}
+            for name, value in list(rule.items()):
+                drule[POS_RULE[name]] = value
+            data.append([drule[c] if c in drule else "" for c in POS_COL] + [result[0]])
+    dfe = pandas.DataFrame(data, columns=POS_COL + ["付与UPOS"])
+    dfe.index = dfe.index + 1
+    return dfe
 
 
 def _main():
-    parser = argparse.ArgumentParser(description="")
+    parser = argparse.ArgumentParser(description="変換テーブルのHTML化をする")
     parser.add_argument("pos_yaml_file")
     parser.add_argument("dep_yaml_file")
-    parser.add_argument("-t", "--tmpl-file", default="tmpl/_tmpl.html")
+    parser.add_argument("-t", "--tmpl-folder", default="tmpl/")
     parser.add_argument("-p", "--save-pos-file", default="POS.html")
     parser.add_argument("-d", "--save-dep-file", default="DEPREL.html")
     args = parser.parse_args()
 
-    pos_template = Template(open(args.tmpl_file, "r").read())
+    env = Environment(loader=FileSystemLoader(args.tmpl_folder))
+    template = env.get_template('_tmpl.html')
     pos_df = get_pos_rules_table(args.pos_yaml_file)
-    pdata = pos_df.to_html(justify="unset", classes="pure-table pure-table-bordered", index_names=True, escape=False, index=True)
-    with open(args.save_pos_file, "w") as wrt:
-        wrt.write(pos_template.render(table=pdata, desc=DESEC, title="日本語UDにおけるPOS変換規則の一覧"))
-    dep_template = Template(open(args.tmpl_file, "r").read())
+    pdata = pos_df.to_html(
+        justify="unset", classes="pure-table pure-table-bordered",
+        index_names=True, escape=False, index=True
+    )
+    with open(args.save_pos_file, "w", encoding="utf-8") as wrt:
+        wrt.write(template.render(table=pdata, desc=DESEC, title="日本語UDにおけるPOS変換規則の一覧"))
     dep_df = get_dep_rules_table(args.dep_yaml_file)
-    ddata = dep_df.to_html(justify="unset", classes="pure-table pure-table-bordered", index_names=True, escape=False, index=True)
-    with open(args.save_dep_file, "w") as wrt:
-        wrt.write(dep_template.render(table=ddata, desc=DESEC, title="日本語UDにおけるDEPREL変換規則の一覧"))
+    ddata = dep_df.to_html(
+        justify="unset", classes="pure-table pure-table-bordered",
+        index_names=True, escape=False, index=True
+    )
+    with open(args.save_dep_file, "w", encoding="utf-8") as wrt:
+        wrt.write(template.render(table=ddata, desc=DESEC, title="日本語UDにおけるDEPREL変換規則の一覧"))
 
 
 if __name__ == '__main__':
