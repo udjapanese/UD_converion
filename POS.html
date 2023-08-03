@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  
     <title>日本語UDにおけるPOS変換規則の一覧</title>
+
   </head>
+<style>
+  .sort.desc:after {
+    content: "▼";
+  }
+
+  .sort.asc:after {
+    content: "▲";
+  }
+</style>
+
   <body>
 
     <div class="pure-g">
@@ -40,792 +52,1496 @@
     </ul>
  
 
-        <table border="1" class="dataframe pure-table pure-table-bordered">
-  <thead>
-    <tr style="text-align: unset;">
-      <th></th>
-      <th>短単位品詞</th>
-      <th>原型</th>
-      <th>長単位品詞</th>
-      <th>単語の親のUPOS</th>
-      <th>単語の親のUPOS</th>
-      <th>付与UPOS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>^形容詞-非自立可能</td>
-      <td></td>
-      <td>助動詞</td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td></td>
-      <td>無い</td>
-      <td>形容詞</td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td></td>
-      <td>ない</td>
-      <td>助詞</td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>^形容詞-非自立可能</td>
-      <td></td>
-      <td>形容詞</td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>^形容詞-</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>^形状詞-一般</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>^形状詞-タリ</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>^形状詞-助動詞語幹</td>
-      <td></td>
-      <td></td>
-      <td>SEM_HEAD</td>
-      <td>SEM_HEAD</td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>^形状詞-助動詞語幹</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>^連体詞</td>
-      <td>^[こそあど此其彼何]の</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>DET</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>^連体詞</td>
-      <td>^或る</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>DET</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>^連体詞</td>
-      <td>^とある</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>DET</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>^連体詞</td>
-      <td>^我が</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>DET</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>^連体詞</td>
-      <td>^あらゆる</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>DET</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>^連体詞</td>
-      <td>^[こそあど此其]</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PRON</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>^連体詞</td>
-      <td>^本の</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PRON</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>^連体詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>^感動詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>INTJ</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>接続詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>CCONJ</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td></td>
-      <td></td>
-      <td>接続詞</td>
-      <td>SEM_HEAD</td>
-      <td>SEM_HEAD</td>
-      <td>CCONJ</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>^助詞-接続助詞</td>
-      <td>^て$</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>SCONJ</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>^副詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADV</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>助詞-格助詞</td>
-      <td>^と$</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADP</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td></td>
-      <td></td>
-      <td>助詞-接続助詞</td>
-      <td></td>
-      <td></td>
-      <td>SCONJ</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>^助詞-準体助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>SCONJ</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>^助詞-副助詞</td>
-      <td></td>
-      <td></td>
-      <td>VERB</td>
-      <td>VERB</td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>助詞-終助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>助詞-接続助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>SCONJ</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>助詞-格助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADP</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>助詞-係助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADP</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>助詞-副助詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>ADP</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>^助動詞</td>
-      <td>^き$</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>^助動詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>^接頭辞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>^接尾辞-形容詞的</td>
-      <td>ぽい</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>^接尾辞-名詞的</td>
-      <td>^さ$</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>^接尾辞-形状詞的</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>^接尾辞-形容詞的</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>^接尾辞-動詞的</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PART</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>^接尾辞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>^動詞-非自立可能</td>
-      <td>為る</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>^動詞-非自立可能</td>
-      <td>為る</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>^動詞-非自立可能</td>
-      <td>為る</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>^動詞-非自立可能</td>
-      <td>為る</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>^動詞-非自立可能</td>
-      <td>出来る</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>^動詞-非自立可能</td>
-      <td>出来る</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>^動詞-非自立可能</td>
-      <td>下さる</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>^動詞-非自立可能</td>
-      <td>下さる</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>^動詞-非自立可能</td>
-      <td>頂く</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>^動詞-非自立可能</td>
-      <td>頂く</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>^動詞-非自立可能</td>
-      <td>致す</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>52</th>
-      <td>^動詞-非自立可能</td>
-      <td>致す</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>^動詞-非自立可能</td>
-      <td>為さる</td>
-      <td></td>
-      <td>SYN_HEAD</td>
-      <td>SYN_HEAD</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>^動詞-非自立可能</td>
-      <td>為さる</td>
-      <td></td>
-      <td>FUNC</td>
-      <td>FUNC</td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>^名詞-助動詞語幹</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>^代名詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PRON</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>^名詞-固有名詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PROPN</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>^動詞-.*</td>
-      <td></td>
-      <td></td>
-      <td>ROOT</td>
-      <td>ROOT</td>
-      <td>VERB</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>^動詞-.*</td>
-      <td></td>
-      <td></td>
-      <td>SEM_HEAD</td>
-      <td>SEM_HEAD</td>
-      <td>VERB</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>^名詞-普通名詞-サ変可能</td>
-      <td></td>
-      <td>動詞</td>
-      <td></td>
-      <td></td>
-      <td>VERB</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>^名詞-普通名詞-サ変可能</td>
-      <td></td>
-      <td>名詞</td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>^名詞-普通名詞-形状詞可能</td>
-      <td></td>
-      <td>形状詞</td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>^名詞-普通名詞-形状詞可能</td>
-      <td></td>
-      <td>名詞</td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>^名詞-普通名詞-サ変形状詞可能</td>
-      <td></td>
-      <td>形状詞</td>
-      <td></td>
-      <td></td>
-      <td>ADJ</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>^名詞-普通名詞-サ変形状詞可能</td>
-      <td></td>
-      <td>動詞</td>
-      <td></td>
-      <td></td>
-      <td>VERB</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>^動詞-</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>VERB</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>^名詞-普通名詞-サ変形状詞可能</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>^名詞-普通名詞-副詞可能</td>
-      <td></td>
-      <td>副詞</td>
-      <td></td>
-      <td></td>
-      <td>ADV</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>^名詞-普通名詞-副詞可能</td>
-      <td></td>
-      <td>副詞</td>
-      <td></td>
-      <td></td>
-      <td>ADV</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>^名詞-普通名詞-副詞可能</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>^名詞-普通名詞-助数詞可能</td>
-      <td></td>
-      <td>助数詞</td>
-      <td></td>
-      <td></td>
-      <td>NUM</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>^名詞-普通名詞-助数詞可能</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>^名詞-数詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NUM</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>^名詞-普通名詞</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td></td>
-      <td></td>
-      <td>助詞-副助詞</td>
-      <td></td>
-      <td></td>
-      <td>AUX</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>^補助記号-[句読括]</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PUNCT</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>^補助記号-一般</td>
-      <td>^\*$</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>PUNCT</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>^補助記号</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>SYM</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>^絵文字</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>SYM</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>^記号</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>^外国語</td>
-      <td></td>
-      <td>名詞-固有名詞-一般</td>
-      <td></td>
-      <td></td>
-      <td>PROPN</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>^外国語</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>^英単語</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>NOUN</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>^空白</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <th>85</th>
-      <td>.*</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>X</td>
-    </tr>
-  </tbody>
-</table>
+      <div id="records">
+        <form class="pure-form">
+        <input type="text" class="search pure-input-1-4" placeholder="Search" />
+        </form>
+        <table class="pure-table pure-table-bordered">
 
+          <thead>
+            <tr>
+              <th class="sort" data-sort="id">#</th>
+              
+              <th class="sort" data-sort="suw">短単位品詞</th>
+              
+              <th class="sort" data-sort="origin">原型</th>
+              
+              <th class="sort" data-sort="luw">長単位品詞</th>
+              
+              <th class="sort" data-sort="btype">文節タイプ</th>
+              
+              <th class="sort" data-sort="pupos">単語の親のUPOS</th>
+              
+              <th class="sort" data-sort="upos">付与UPOS</th>
+              
+            </tr>
+          </thead>
 
-        <p><a href="./index.html">前のページ</a></p>
+          <tbody class="list">
+          
+          <tr class="pure-table-odd">
+            <td class="id">1</td>
+            
+            <td class="suw">^形容詞-非自立可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">助動詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">2</td>
+            
+            <td class="suw"></td>
+            
+            <td class="origin">無い</td>
+            
+            <td class="luw">形容詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">3</td>
+            
+            <td class="suw"></td>
+            
+            <td class="origin">ない</td>
+            
+            <td class="luw">助詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">4</td>
+            
+            <td class="suw">^形容詞-非自立可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">形容詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">5</td>
+            
+            <td class="suw">^形容詞-</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">6</td>
+            
+            <td class="suw">^形状詞-一般</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">7</td>
+            
+            <td class="suw">^形状詞-タリ</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">8</td>
+            
+            <td class="suw">^形状詞-助動詞語幹</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SEM_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">9</td>
+            
+            <td class="suw">^形状詞-助動詞語幹</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">10</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^[こそあど此其彼何]の</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">DET</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">11</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^或る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">DET</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">12</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^とある</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">DET</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">13</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^我が</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">DET</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">14</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^あらゆる</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">DET</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">15</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^[こそあど此其]</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PRON</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">16</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin">^本の</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PRON</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">17</td>
+            
+            <td class="suw">^連体詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">18</td>
+            
+            <td class="suw">^感動詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">INTJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">19</td>
+            
+            <td class="suw">接続詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">CCONJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">20</td>
+            
+            <td class="suw"></td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">接続詞</td>
+            
+            <td class="btype">SEM_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">CCONJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">21</td>
+            
+            <td class="suw">^助詞-接続助詞</td>
+            
+            <td class="origin">^て$</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SCONJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">22</td>
+            
+            <td class="suw">^副詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADV</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">23</td>
+            
+            <td class="suw">助詞-格助詞</td>
+            
+            <td class="origin">^と$</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADP</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">24</td>
+            
+            <td class="suw"></td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">助詞-接続助詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SCONJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">25</td>
+            
+            <td class="suw">^助詞-準体助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SCONJ</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">26</td>
+            
+            <td class="suw">^助詞-副助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos">VERB</td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">27</td>
+            
+            <td class="suw">助詞-終助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">28</td>
+            
+            <td class="suw">助詞-接続助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SCONJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">29</td>
+            
+            <td class="suw">助詞-格助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADP</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">30</td>
+            
+            <td class="suw">助詞-係助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADP</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">31</td>
+            
+            <td class="suw">助詞-副助詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADP</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">32</td>
+            
+            <td class="suw">^助動詞</td>
+            
+            <td class="origin">^き$</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">33</td>
+            
+            <td class="suw">^助動詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">34</td>
+            
+            <td class="suw">^接頭辞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">35</td>
+            
+            <td class="suw">^接尾辞-形容詞的</td>
+            
+            <td class="origin">ぽい</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">36</td>
+            
+            <td class="suw">^接尾辞-名詞的</td>
+            
+            <td class="origin">^さ$</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">37</td>
+            
+            <td class="suw">^接尾辞-形状詞的</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">38</td>
+            
+            <td class="suw">^接尾辞-形容詞的</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">39</td>
+            
+            <td class="suw">^接尾辞-動詞的</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PART</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">40</td>
+            
+            <td class="suw">^接尾辞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">41</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">42</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">43</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">44</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">45</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">出来る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">46</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">出来る</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">47</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">下さる</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">48</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">下さる</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">49</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">頂く</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">50</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">頂く</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">51</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">致す</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">52</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">致す</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">53</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為さる</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SYN_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">54</td>
+            
+            <td class="suw">^動詞-非自立可能</td>
+            
+            <td class="origin">為さる</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">FUNC</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">55</td>
+            
+            <td class="suw">^名詞-助動詞語幹</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">56</td>
+            
+            <td class="suw">^代名詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PRON</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">57</td>
+            
+            <td class="suw">^名詞-固有名詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PROPN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">58</td>
+            
+            <td class="suw">^動詞-.*</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">ROOT</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">VERB</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">59</td>
+            
+            <td class="suw">^動詞-.*</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype">SEM_HEAD</td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">VERB</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">60</td>
+            
+            <td class="suw">^名詞-普通名詞-サ変可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">動詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">VERB</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">61</td>
+            
+            <td class="suw">^名詞-普通名詞-サ変可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">名詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">62</td>
+            
+            <td class="suw">^名詞-普通名詞-形状詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">形状詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">63</td>
+            
+            <td class="suw">^名詞-普通名詞-形状詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">名詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">64</td>
+            
+            <td class="suw">^名詞-普通名詞-サ変形状詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">形状詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADJ</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">65</td>
+            
+            <td class="suw">^名詞-普通名詞-サ変形状詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">動詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">VERB</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">66</td>
+            
+            <td class="suw">^動詞-</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">VERB</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">67</td>
+            
+            <td class="suw">^名詞-普通名詞-サ変形状詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">68</td>
+            
+            <td class="suw">^名詞-普通名詞-副詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">副詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADV</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">69</td>
+            
+            <td class="suw">^名詞-普通名詞-副詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">副詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">ADV</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">70</td>
+            
+            <td class="suw">^名詞-普通名詞-副詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">71</td>
+            
+            <td class="suw">^名詞-普通名詞-助数詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">助数詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NUM</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">72</td>
+            
+            <td class="suw">^名詞-普通名詞-助数詞可能</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">73</td>
+            
+            <td class="suw">^名詞-数詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NUM</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">74</td>
+            
+            <td class="suw">^名詞-普通名詞</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">75</td>
+            
+            <td class="suw"></td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">助詞-副助詞</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">AUX</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">76</td>
+            
+            <td class="suw">^補助記号-[句読括]</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PUNCT</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">77</td>
+            
+            <td class="suw">^補助記号-一般</td>
+            
+            <td class="origin">^\*$</td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PUNCT</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">78</td>
+            
+            <td class="suw">^補助記号</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SYM</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">79</td>
+            
+            <td class="suw">^絵文字</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">SYM</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">80</td>
+            
+            <td class="suw">^記号</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">81</td>
+            
+            <td class="suw">^外国語</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw">名詞-固有名詞-一般</td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">PROPN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">82</td>
+            
+            <td class="suw">^外国語</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">83</td>
+            
+            <td class="suw">^英単語</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">NOUN</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="id">84</td>
+            
+            <td class="suw">^空白</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">X</td>
+            
+          </tr>
+          
+          <tr class="pure-table-odd">
+            <td class="id">85</td>
+            
+            <td class="suw">.*</td>
+            
+            <td class="origin"></td>
+            
+            <td class="luw"></td>
+            
+            <td class="btype"></td>
+            
+            <td class="pupos"></td>
+            
+            <td class="upos">X</td>
+            
+          </tr>
+          
+          </tbody>
+  
+        </table>
+      </div>
+      <p><a href="./index.html">前のページ</a></p>
 
       </div>
       <div class="pure-u-2-24"></div>
     </div>
   </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js" integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+let options = {valueNames: ['id', 'suw', 'origin', 'luw', 'btype', 'pupos', 'upos']};
+let recordList = new List('records', options);
+recordList.sort('id', { order : 'asc' });
+
+</script>
+
 </html>

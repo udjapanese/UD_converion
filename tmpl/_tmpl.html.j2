@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  
+    <title>{{title}}</title>
+
+  </head>
+<style>
+  .sort.desc:after {
+    content: "▼";
+  }
+
+  .sort.asc:after {
+    content: "▲";
+  }
+</style>
+
+  <body>
+
+    <div class="pure-g">
+      <div class="pure-u-2-24"></div>
+      <div class="pure-u-20-24">
+
+       <p><a href="./index.html">前のページ</a></p>
+
+        <h1>{{title}}</h1>
+
+        {{desc}}
+
+      <div id="records">
+        <form class="pure-form">
+        <input type="text" class="search pure-input-1-4" placeholder="Search" />
+        </form>
+        <table class="pure-table pure-table-bordered">
+
+          <thead>
+            <tr>
+              <th class="sort" data-sort="id">#</th>
+              {% for i in header: %}
+              <th class="sort" data-sort="{{ orders[loop.index] }}">{{ i }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+
+          <tbody class="list">
+          {% for i in record: %}
+          <tr {%- if loop.index0 % 2 == 0 %} class="pure-table-odd" {%- endif %}>
+            <td class="id">{{ loop.index }}</td>
+            {% for j in i: %}
+            <td class="{{ orders[loop.index] }}">{{ j }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          </tbody>
+  
+        </table>
+      </div>
+      <p><a href="./index.html">前のページ</a></p>
+
+      </div>
+      <div class="pure-u-2-24"></div>
+    </div>
+  </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js" integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+let options = {valueNames: {{ orders }}};
+let recordList = new List('records', options);
+recordList.sort('id', { order : 'asc' });
+
+</script>
+
+</html>

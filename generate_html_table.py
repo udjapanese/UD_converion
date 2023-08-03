@@ -6,7 +6,6 @@ SHOW rule table
 
 import argparse
 
-import pandas
 import ruamel.yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -59,10 +58,10 @@ POS_RULE = {
     "pos": "短単位品詞",
     "base_lexeme": "原型",
     "luw": "長単位品詞",
-    "bpos": "単語の親のUPOS",
+    "bpos": "文節タイプ",
     "parent_upos": "単語の親のUPOS"
 }
-POS_COL = ["短単位品詞", "原型", "長単位品詞", "単語の親のUPOS", "単語の親のUPOS"]
+POS_COL = ["短単位品詞", "原型", "長単位品詞", "文節タイプ", "単語の親のUPOS"]
 DESEC = """
     <ul>
         <li>対象の単語について条件を満たすものを割り当てる</li>
@@ -83,12 +82,12 @@ DESEC = """
     </ul>
  """
 
-def get_dep_rules_table(dep_yaml_file: str="conf/bccwj_dep_suw_rule.yaml") -> pandas.DataFrame:
+
+def get_dep_rules_table(dep_yaml_file: str="conf/bccwj_dep_suw_rule.yaml") -> list[list[str]]:
     """ generate DEP rule table as Dataframe """
     data: list[list[str]] = []
-    yaml = ruamel.yaml.YAML()
     with open(dep_yaml_file, "r", encoding="utf-8") as rdr:
-        for rules in yaml.load(rdr.read().replace('\t', '    '))["order_rule"]:
+        for rules in ruamel.yaml.YAML().load(rdr.read().replace('\t', '    '))["order_rule"]:
             rrr: list[str] = []
             for rule in rules["rule"]:
                 func, iargs = rule
@@ -99,26 +98,23 @@ def get_dep_rules_table(dep_yaml_file: str="conf/bccwj_dep_suw_rule.yaml") -> pa
                         iargs if not isinstance(iargs, list) else ",".join(iargs)
                     )
                 )
-            data.append(["<ul>" + "".join(["<li>" + r + "</li>" for r in rrr]) + "</ul>", rules["res"]])
-    dfe = pandas.DataFrame(data, columns=["ルール", "付与DEPREL"])
-    dfe.index = dfe.index + 1
-    return dfe
+            record = ["<ul>" + "".join(f"<li>{r}</li>" for r in rrr) + "</ul>", rules["res"]]
+            data.append(record)
+    return data
 
 
-def get_pos_rules_table(pos_yaml_file: str="conf/bccwj_pos_suw_rule.yaml") -> pandas.DataFrame:
+def get_pos_rules_table(pos_yaml_file: str="conf/bccwj_pos_suw_rule.yaml") -> list[list[str]]:
     """ generate POS rule table as Dataframe """
     data: list[list[str]] = []
-    yaml = ruamel.yaml.YAML()
     with open(pos_yaml_file, "r", encoding="utf-8") as rdr:
-        for rule_pair in yaml.load(rdr.read().replace('\t', '    '))["rule"]:
+        for rule_pair in ruamel.yaml.YAML().load(rdr.read().replace('\t', '    '))["rule"]:
             rule, result = rule_pair
-            drule: dict[str, str] = {}
-            for name, value in list(rule.items()):
-                drule[POS_RULE[name]] = value
-            data.append([drule[c] if c in drule else "" for c in POS_COL] + [result[0]])
-    dfe = pandas.DataFrame(data, columns=POS_COL + ["付与UPOS"])
-    dfe.index = dfe.index + 1
-    return dfe
+            drule: dict[str, str] = {
+                POS_RULE[name]: value for name, value in list(rule.items())
+            }
+            record = [drule[c] if c in drule else "" for c in POS_COL] + [",".join(result)]
+            data.append(record)
+    return data
 
 
 def _main():
@@ -131,21 +127,21 @@ def _main():
     args = parser.parse_args()
 
     env = Environment(loader=FileSystemLoader(args.tmpl_folder))
-    template = env.get_template('_tmpl.html')
-    pos_df = get_pos_rules_table(args.pos_yaml_file)
-    pdata = pos_df.to_html(
-        justify="unset", classes="pure-table pure-table-bordered",
-        index_names=True, escape=False, index=True
-    )
+    template = env.get_template('_tmpl.html.j2')
+    pdata = get_pos_rules_table(args.pos_yaml_file)
     with open(args.save_pos_file, "w", encoding="utf-8") as wrt:
-        wrt.write(template.render(table=pdata, desc=DESEC, title="日本語UDにおけるPOS変換規則の一覧"))
-    dep_df = get_dep_rules_table(args.dep_yaml_file)
-    ddata = dep_df.to_html(
-        justify="unset", classes="pure-table pure-table-bordered",
-        index_names=True, escape=False, index=True
-    )
+        wrt.write(template.render(
+            header=POS_COL + ["付与UPOS"],
+            orders=["id", "suw", "origin", "luw", "btype", "pupos", "upos"],
+            record=pdata, desc=DESEC, title="日本語UDにおけるPOS変換規則の一覧"
+        ))
+    ddata = get_dep_rules_table(args.dep_yaml_file)
     with open(args.save_dep_file, "w", encoding="utf-8") as wrt:
-        wrt.write(template.render(table=ddata, desc=DESEC, title="日本語UDにおけるDEPREL変換規則の一覧"))
+        wrt.write(template.render(
+            header=['ルール', '付与DEPREL'],
+            orders=["id", "rule", "deprel"],
+            record=ddata, desc=DESEC, title="日本語UDにおけるDEPREL変換規則の一覧"
+        ))
 
 
 if __name__ == '__main__':
