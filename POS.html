@@ -33,23 +33,23 @@
         <h1>日本語UDにおけるPOS変換規則の一覧</h1>
 
         
-    &lt;ul&gt;
-        &lt;li&gt;対象の単語について条件を満たすものを割り当てる&lt;/li&gt;
-        &lt;li&gt;上位のものを優先的に割り当てる&lt;/li&gt;
-        &lt;li&gt;文節タイプ：係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの&lt;/li&gt;
-        &lt;ul&gt;
-            &lt;li&gt;ROOT: ルート&lt;/li&gt;
-            &lt;li&gt;SEM_HEAD: 内容語の主辞&lt;/li&gt;
-            &lt;li&gt;CONT: 主辞ではない内容語&lt;/li&gt;
-            &lt;li&gt;SYN_HEAD: 機能語の主辞&lt;/li&gt;
-            &lt;li&gt;FUNC: SYN_HEAD以外の機能語&lt;/li&gt;
-            &lt;li&gt;NO_HEAD: 上記以外&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;li&gt;文法種類&lt;/li&gt;
-        &lt;ul&gt;
-            &lt;li&gt;文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/ul&gt;
+    <ul>
+        <li>対象の単語について条件を満たすものを割り当てる</li>
+        <li>上位のものを優先的に割り当てる</li>
+        <li>文節タイプ：係り受け情報と文節における位置づけ（主辞や機能語）をラベルづけしたもの</li>
+        <ul>
+            <li>ROOT: ルート</li>
+            <li>SEM_HEAD: 内容語の主辞</li>
+            <li>CONT: 主辞ではない内容語</li>
+            <li>SYN_HEAD: 機能語の主辞</li>
+            <li>FUNC: SYN_HEAD以外の機能語</li>
+            <li>NO_HEAD: 上記以外</li>
+        </ul>
+        <li>文法種類</li>
+        <ul>
+            <li>文節情報から「体言」「用言」あるいは「コピュラ」かを抽出している</li>
+        </ul>
+    </ul>
  
 
       <div id="records">
@@ -1538,7 +1538,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js" integrity="sha512-93wYgwrIFL+b+P3RvYxi/WUFRXXUDSLCT2JQk9zhVGXuS2mHl2axj6d+R6pP+gcU5isMHRj1u0oYE/mWyt/RjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
-let options = {valueNames: [&#39;id&#39;, &#39;suw&#39;, &#39;origin&#39;, &#39;luw&#39;, &#39;btype&#39;, &#39;pupos&#39;, &#39;upos&#39;]};
+let options = {valueNames: ['id', 'suw', 'origin', 'luw', 'btype', 'pupos', 'upos']};
 let recordList = new List('records', options);
 recordList.sort('id', { order : 'asc' });
 

@@ -110,7 +110,7 @@ def get_pos_rules_table(pos_yaml_file: str="conf/bccwj_pos_suw_rule.yaml") -> li
             drule: dict[str, str] = {
                 POS_RULE[name]: value for name, value in list(rule.items())
             }
-            record = [drule[c] if c in drule else "" for c in POS_COL] + [",".join(result)]
+            record = [drule.get(c, "") for c in POS_COL] + [",".join(result)]
             data.append(record)
     return data
 
@@ -124,7 +124,7 @@ def _main() -> None:
     parser.add_argument("-d", "--save-dep-file", default="DEPREL.html")
     args = parser.parse_args()
 
-    env = Environment(loader=FileSystemLoader(args.tmpl_folder), autoescape=True)
+    env = Environment(loader=FileSystemLoader(args.tmpl_folder))
     template = env.get_template("_tmpl.html.j2")
     pdata = get_pos_rules_table(args.pos_yaml_file)
     with Path(args.save_pos_file).open("w", encoding="utf-8") as wrt:
